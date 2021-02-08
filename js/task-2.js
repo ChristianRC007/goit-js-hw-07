@@ -2,8 +2,10 @@ const ingredients = ["Картошка", "Грибы", "Чеснок", "Поми
 
 const ingredientsListEl = document.querySelector("#ingredients");
 
-ingredients.forEach(x => {
+const ingredientstEl = ingredients.map(x => {
   const listItemEl = document.createElement("li");
   listItemEl.textContent = x;
-  ingredientsListEl.appendChild(listItemEl);
-});
+  return listItemEl
+})
+
+ingredientsListEl.append(...ingredientstEl)
