@@ -31,5 +31,4 @@ const makeElementsArray = array => {
 }
 
 const makeElement = makeElementsArray(images)
-console.log(makeElement);
 galleryListEl.insertAdjacentHTML('afterbegin', makeElement)
