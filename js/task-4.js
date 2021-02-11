@@ -9,11 +9,11 @@ refs.incrementBtn.addEventListener('click', toIncrementValue);
 
 let counterValue = 0;
 
-const toDecrementValue = () => {
+function toDecrementValue() {
   counterValue -= 1
   refs.counterLabel.textContent = counterValue
 };
-const toIncrementValue = () => {
+function toIncrementValue() {
   counterValue += 1
   refs.counterLabel.textContent = counterValue;
 };
