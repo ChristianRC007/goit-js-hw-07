@@ -18,11 +18,6 @@ const images = [
 
 const galleryListEl = document.querySelector('#gallery');
 
-// const listElementsArray = images.map(el => {
-//   const newElement = `<li><img src="${el.url} alt="${el.alt}"></li>`
-//   return newElement
-// }).join('')
-
 const makeElementsArray = array => {
   return array.map(({url, alt}) => {
     const newElement = `<li><img src="${url} alt="${alt}"></li>`

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
 
-  margin: 0;
+  margin: 20px 0;
   padding: 0;
 
   list-style: none;
@@ -10,5 +10,25 @@
 
 #gallery img {
   width: 600px;
-  height: 500px;
+  height: 400px;
+}
+
+.menu__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.menu__link {
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+  transition: color 100ms linear;
+}
+
+.menu__link:hover {
+  color: red;
+}
+
+#counter {
+  margin-top: 20px;
+  margin-left: 20px;
 }
