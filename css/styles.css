@@ -17,6 +17,10 @@
   margin-bottom: 10px;
 }
 
+.menu__item::marker {
+  font-size: 30px;
+}
+
 .menu__link {
   font-size: 30px;
   color: black;
@@ -31,4 +35,10 @@
 #counter {
   margin-top: 20px;
   margin-left: 20px;
+}
+
+#name-input {
+  display: block;
+
+  margin-top: 20px;
 }
