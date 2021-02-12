@@ -1,3 +1,10 @@
+.title {
+  margin: 0;
+
+  font-size: 50px;
+  text-align: center;
+}
+
 #gallery {
   display: flex;
   justify-content: space-between;
@@ -13,6 +20,16 @@
   height: 400px;
 }
 
+/* Main menu */
+.menu {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+
+  list-style: none;
+  transform: translate(-50%, -50%);
+}
+
 .menu__item:not(:last-child) {
   margin-bottom: 10px;
 }
@@ -22,19 +39,116 @@
 }
 
 .menu__link {
-  font-size: 30px;
+  font-size: 50px;
   color: black;
   text-decoration: none;
   transition: color 100ms linear;
 }
 
-.menu__link:hover {
-  color: red;
+.menu__link::before {
+  content: attr(data-text);
+  position: absolute;
+  top: -25%;
+  left: 60%;
+  z-index: -1;
+
+  font-weight: 600;
+  font-size: 200px;
+  text-align: center;
+  color: rgb(79, 108, 236);
+
+  opacity: 0;
+  transition: 0.1s linear;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  overflow: hidden;
 }
+.menu__link:hover {
+  color: rgb(79, 108, 236);
+}
+.menu__item:hover > .menu__link::before {
+  opacity: 1;
+}
+/* ---- Menu End ---- */
+
+/* Home button */
+.home__link {
+  color: rgb(79, 108, 236);
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.home__link:hover {
+  border-bottom: 2px solid rgb(79, 108, 236);
+}
+/* ---- Home button End ---- */
+
+/* Navigation */
+.navigation {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.navigation__btn {
+  margin-left: 20px;
+
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+}
+
+.navigation__btn:hover {
+  color: rgb(79, 108, 236);
+  border-bottom: 2px solid rgb(79, 108, 236);
+}
+/* ---- Navigation End ---- */
 
 #counter {
   margin-top: 20px;
   margin-left: 20px;
+}
+
+#counter > span {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
+button[data-action="decrement"] {
+  padding: 5px 15px;
+
+  background-color: rgb(211, 45, 45);
+  border: 2px solid rgb(224, 214, 214);
+  border-radius: 5px;
+  color: white;
+
+  cursor: pointer;
+  outline: none;
+  transition: background-color 100ms linear;
+}
+
+button[data-action="decrement"]:hover {
+  background-color: rgb(172, 40, 40);
+}
+
+button[data-action="increment"] {
+  padding: 5px 15px;
+
+  background-color: #4caf50;
+  border: 2px solid rgb(224, 214, 214);
+  border-radius: 5px;
+  color: white;
+
+  cursor: pointer;
+  outline: none;
+  transition: background-color 100ms linear;
+}
+
+button[data-action="increment"]:hover {
+  background-color: #3a883d;
 }
 
 #name-input {
@@ -68,4 +182,32 @@
 
 #controls {
   margin-top: 20px;
+}
+
+#controls > button {
+  padding: 5px 15px;
+
+  border: 2px solid rgb(224, 214, 214);
+  border-radius: 5px;
+  color: white;
+
+  cursor: pointer;
+  outline: none;
+  transition: background-color 100ms linear;
+}
+
+button[data-action="render"] {
+  background-color: #4caf50;
+}
+
+button[data-action="render"]:hover {
+  background-color: #3a883d;
+}
+
+button[data-action="destroy"] {
+  background-color: rgb(211, 45, 45);
+}
+
+button[data-action="destroy"]:hover {
+  background-color: rgb(172, 40, 40);
 }
