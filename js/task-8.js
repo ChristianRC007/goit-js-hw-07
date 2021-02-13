@@ -18,6 +18,7 @@ function renderBoxes() {
 };
 
 function createBoxes(amount) {
+  const elementsArray = [];
 
   for (let i = 0; i < amount; i += 1) {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16)
@@ -25,11 +26,11 @@ function createBoxes(amount) {
     let boxSize = 30;
     
     boxEl.style.backgroundColor = `#${randomColor}`
-    boxEl.style.height = `${boxSize + i * 10}px`
-    boxEl.style.width = `${boxSize + i * 10}px`
+    boxEl.style.height = boxEl.style.width = `${boxSize + i * 10}px`
 
-    refs.boxesListEl.append(boxEl)
+    elementsArray.push(boxEl)
   }
+  refs.boxesListEl.append(...elementsArray)
 };
 
 function destroyBoxes() {

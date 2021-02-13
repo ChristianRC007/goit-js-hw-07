@@ -18,12 +18,8 @@ const images = [
 
 const galleryListEl = document.querySelector('#gallery');
 
-const makeElementsArray = array => {
-  return array.map(({url, alt}) => {
-    const newElement = `<li><img src="${url} alt="${alt}"></li>`
-  return newElement
-}).join('');
-}
+const makeElementsArray = array => array.map(({url, alt}) => `<li><img src="${url} alt="${alt}"></li>`).join('');
+
 
 const makeElement = makeElementsArray(images)
 galleryListEl.insertAdjacentHTML('afterbegin', makeElement)
